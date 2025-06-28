@@ -1,13 +1,40 @@
-# React + Vite
+# 🏡 Rent Yard Frontend Job Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Rent Yard** is a modern React-based frontend project for managing rental property listings. This interface allows landlords, realtors, and tenants to interact with property data through an intuitive and responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React**
+- **Vite**
+- **React Router DOM**
+- **Tailwind CSS**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Rent-Yard-Task-
+---
+
+## 📦 Getting Started
+
+Follow the instructions below to get the project up and running on your local machine.
+
+---
+
+### ✅ Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/en/download/) (version 16+ recommended)
+- [npm](https://www.npmjs.com/) 
+
+---
+
+### 🛠 Installation & Setup
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/your-username/rent-yard-frontend.git
+cd rentyard
+npm install
+npm run dev
+
