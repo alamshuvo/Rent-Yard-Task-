@@ -7,6 +7,7 @@ import img5 from "../assets/5.svg";
 import img6 from "../assets/6.svg";
 import Footer from "./Footer";
 import Landlord from "../utils/Landlord";
+import Relator from "../utils/Relator";
 
 const PropertyType = () => {
   const properties = [
@@ -146,6 +147,13 @@ const PropertyType = () => {
         {roleType === "Landlord" && selectedType==="condominiums" && (
           <div className="mt-6">
             <Landlord />
+          </div>
+        )}
+      </div>
+      <div className="">
+        {roleType === "Realtor" && selectedType==="condominiums" && (
+          <div className="mt-6">
+            <Relator></Relator>
           </div>
         )}
       </div>
