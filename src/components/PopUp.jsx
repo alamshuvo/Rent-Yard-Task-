@@ -9,7 +9,7 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit }) => {
       case "propertyAdress":
         return (
           <>
-            <PropertyAdress></PropertyAdress>
+            <PropertyAdress handleSubmit={handleSubmit}></PropertyAdress>
           </>
         );
 
@@ -78,14 +78,7 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit }) => {
 
         {renderPopupContent()}
 
-        <div className="flex justify-end mt-4 px-[14px] mb-4">
-          <button
-            onClick={handleSubmit}
-            className="bg-blue-500 text-white px-4 py-[14px] rounded-[12px]"
-          >
-            Add
-          </button>
-        </div>
+      
       </div>
     </div>
   );
