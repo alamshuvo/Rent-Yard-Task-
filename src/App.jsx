@@ -1,19 +1,25 @@
-import Nav from "./components/Nav"
-import PropertyType from "./components/PropertyType"
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+import { Outlet, useLocation } from "react-router-dom";
 
 function App() {
-  
-
+  const path = useLocation();
   return (
-   <div className="">
+    <div>
       <div>
-        <Nav></Nav>
+        {
+          path.pathname === "/" ? (
+            <Nav des={"Exit"} />
+          ) : (
+            <Nav des={"Save & Exit "} />
+          )
+        }
       </div>
-      <div className="mt-[40px] mb-[32px]">
-        <PropertyType></PropertyType>
+      <div className={path.pathname !== "/rent" ?"mt-[40px] mb-[32px]":""}>
+        <Outlet /> 
       </div>
-   </div>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
