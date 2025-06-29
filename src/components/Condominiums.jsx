@@ -3,6 +3,8 @@ import Footer from "./Footer";
 import plus from "../assets/+.png";
 import { useState } from "react";
 import PopUp from "./PopUp";
+import PropertyGallery from "../utils/Galary";
+import Vedios from "../utils/Vedios";
 const Condominiums = () => {
   const [add, setAdd] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -156,6 +158,10 @@ const Condominiums = () => {
                 </button>
               </div>
             ))}
+          </div>
+          <PropertyGallery></PropertyGallery>
+          <div className=" rounded-[20px]">
+            <Vedios></Vedios>
           </div>
         </div>
       </div>
