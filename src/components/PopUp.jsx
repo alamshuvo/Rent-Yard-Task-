@@ -1,11 +1,13 @@
 import AboutPopUp from "../utils/CondominiumsInformationPopup/AboutProperty";
 import ApplicationPopUp from "../utils/CondominiumsInformationPopup/ApplicationAgrement";
 import ChargesPopUp from "../utils/CondominiumsInformationPopup/ChargesPopUp";
+import CommunityPopUp from "../utils/CondominiumsInformationPopup/CommunityPopUp";
 import LeasingInfoPopup from "../utils/CondominiumsInformationPopup/LeasingInfoPopup";
+import PetFeesPopUp from "../utils/CondominiumsInformationPopup/petFeesPopUp";
 import PropertyAdress from "../utils/CondominiumsInformationPopup/PropertyAdress";
 import RentFrequencyPayment from "../utils/CondominiumsInformationPopup/RentFrequencyPayment";
 
-const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit,setIsModalOpen }) => {
+const PopUp = ({ isModalOpen, handleClose, selectedKey, setIsModalOpen }) => {
   if (!isModalOpen || !selectedKey) return null;
 
   const renderPopupContent = () => {
@@ -13,48 +15,70 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit,setIsModalO
       case "propertyAdress":
         return (
           <>
-            {isModalOpen && <PropertyAdress onClose={() => setIsModalOpen(false)} />
-          }
+            {isModalOpen && (
+              <PropertyAdress onClose={() => setIsModalOpen(false)} />
+            )}
           </>
         );
 
       case "leasingInfo":
         return (
           <>
-           {isModalOpen && <LeasingInfoPopup onClose={() => setIsModalOpen(false)} />
-          }
+            {isModalOpen && (
+              <LeasingInfoPopup onClose={() => setIsModalOpen(false)} />
+            )}
           </>
         );
 
       case "rentFrequencyPaymentReminder":
         return (
           <>
-        {isModalOpen && <RentFrequencyPayment onClose={() => setIsModalOpen(false)} />
-          }
+            {isModalOpen && (
+              <RentFrequencyPayment onClose={() => setIsModalOpen(false)} />
+            )}
           </>
         );
 
       case "charges":
         return (
           <>
-           {isModalOpen && <ChargesPopUp onClose={() => setIsModalOpen(false)} />
-          }
+            {isModalOpen && (
+              <ChargesPopUp onClose={() => setIsModalOpen(false)} />
+            )}
           </>
         );
-        case "applicationAgreement":
-          return (
-            <>
-             {isModalOpen && <ApplicationPopUp onClose={() => setIsModalOpen(false)} />
-          }
-            </>
-          );
-          case "aboutTheProperty":
-            return(
-              <>
-                 {isModalOpen && <AboutPopUp onClose={() => setIsModalOpen(false)} />
-          }
-              </>
-            )
+      case "applicationAgreement":
+        return (
+          <>
+            {isModalOpen && (
+              <ApplicationPopUp onClose={() => setIsModalOpen(false)} />
+            )}
+          </>
+        );
+      case "aboutTheProperty":
+        return (
+          <>
+            {isModalOpen && (
+              <AboutPopUp onClose={() => setIsModalOpen(false)} />
+            )}
+          </>
+        );
+      case "communityAmenityFeatures":
+        return (
+          <>
+            {isModalOpen && (
+              <CommunityPopUp onClose={() => setIsModalOpen(false)} />
+            )}
+          </>
+        );
+      case "petFees":
+        return (
+          <>
+            {isModalOpen && (
+              <PetFeesPopUp onClose={() => setIsModalOpen(false)} />
+            )}
+          </>
+        );
 
       default:
         return (
@@ -83,8 +107,6 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit,setIsModalO
         </button>
 
         {renderPopupContent()}
-
-      
       </div>
     </div>
   );
