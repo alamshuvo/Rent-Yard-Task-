@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-const PropertyAdress = () => {
+const PropertyAdress = ({onClose}) => {
   const formRef = useRef();
 
   const propertyFields = [
@@ -80,16 +80,17 @@ const PropertyAdress = () => {
     e.preventDefault();
     const formData = new FormData(formRef.current);
     const data = {};
-
     for (let [key, value] of formData.entries()) {
       data[key] = value;
     }
+    console.log("Leasing Form Data:", data);
 
-    console.log("Form Data:", data);
-  };
+    // ✅ Close modal AFTER processing if needed
+    onClose?.(); 
+};
 
   return (
-    <div className="font-fustat">
+    <div className="font-fustat lg:w-[780px]">
       <form ref={formRef} onSubmit={handleSubmit}>
         <div className="border rounded-[8px]">
           {/* Section Header */}
@@ -145,7 +146,7 @@ const PropertyAdress = () => {
         {/* Submit Button */}
         <div className="flex justify-end mt-4 px-[14px] mb-4">
           <button
-            onClick={handleSubmit}
+           
             className="bg-blue-500 text-white px-4 py-[14px] rounded-[12px]"
           >
             Add

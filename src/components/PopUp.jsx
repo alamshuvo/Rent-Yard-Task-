@@ -1,7 +1,11 @@
-import PropertyAdress from "../utils/PropertyAdress";
-import PropertyManagement from "../utils/PropertyManagement";
+import AboutPopUp from "../utils/CondominiumsInformationPopup/AboutProperty";
+import ApplicationPopUp from "../utils/CondominiumsInformationPopup/ApplicationAgrement";
+import ChargesPopUp from "../utils/CondominiumsInformationPopup/ChargesPopUp";
+import LeasingInfoPopup from "../utils/CondominiumsInformationPopup/LeasingInfoPopup";
+import PropertyAdress from "../utils/CondominiumsInformationPopup/PropertyAdress";
+import RentFrequencyPayment from "../utils/CondominiumsInformationPopup/RentFrequencyPayment";
 
-const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit }) => {
+const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit,setIsModalOpen }) => {
   if (!isModalOpen || !selectedKey) return null;
 
   const renderPopupContent = () => {
@@ -9,46 +13,48 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, handleSubmit }) => {
       case "propertyAdress":
         return (
           <>
-            <PropertyAdress handleSubmit={handleSubmit}></PropertyAdress>
+            {isModalOpen && <PropertyAdress onClose={() => setIsModalOpen(false)} />
+          }
           </>
         );
 
-      case "petFees":
+      case "leasingInfo":
         return (
           <>
-            <h2 className="text-xl font-semibold mb-4">Pet Fees</h2>
-            <input
-              type="number"
-              placeholder="Enter fee amount"
-              className="border w-full px-3 py-2 rounded mb-2"
-            />
-            <p className="text-sm text-gray-500">Only if pets are allowed.</p>
+           {isModalOpen && <LeasingInfoPopup onClose={() => setIsModalOpen(false)} />
+          }
           </>
         );
 
-      case "parking":
+      case "rentFrequencyPaymentReminder":
         return (
           <>
-            <h2 className="text-xl font-semibold mb-4">Parking Info</h2>
-            <textarea
-              placeholder="Describe parking availability"
-              className="border w-full px-3 py-2 rounded mb-4"
-              rows={3}
-            />
+        {isModalOpen && <RentFrequencyPayment onClose={() => setIsModalOpen(false)} />
+          }
           </>
         );
 
       case "charges":
         return (
           <>
-            <h2 className="text-xl font-semibold mb-4">Charges</h2>
-            <input
-              type="text"
-              placeholder="e.g. Service charge, maintenance"
-              className="border w-full px-3 py-2 rounded mb-4"
-            />
+           {isModalOpen && <ChargesPopUp onClose={() => setIsModalOpen(false)} />
+          }
           </>
         );
+        case "applicationAgreement":
+          return (
+            <>
+             {isModalOpen && <ApplicationPopUp onClose={() => setIsModalOpen(false)} />
+          }
+            </>
+          );
+          case "aboutTheProperty":
+            return(
+              <>
+                 {isModalOpen && <AboutPopUp onClose={() => setIsModalOpen(false)} />
+          }
+              </>
+            )
 
       default:
         return (

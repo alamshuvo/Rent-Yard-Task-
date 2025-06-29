@@ -170,7 +170,7 @@ const Condominiums = () => {
         <Footer des={"Next"}></Footer>
       </div>
       <div>
-        {isModalOpen && <PopUp isModalOpen={isModalOpen} handleClose={handleClose} handleSubmit={handleSubmit} selectedKey={selectedKey}></PopUp>}
+        {isModalOpen && <PopUp setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} handleClose={handleClose} handleSubmit={handleSubmit} selectedKey={selectedKey}></PopUp>}
       </div>
     </div>
   );
