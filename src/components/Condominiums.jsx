@@ -60,8 +60,8 @@ const Condominiums = () => {
       buttonText: "Add",
     },
     {
-      label: "Nearest educational stations  ",
-      key: "nearestEducationalStations",
+      label: "Nearest stations  ",
+      key: "nearestStations",
       id: 8,
       required: "(Optional but recommended)",
       buttonText: "Add",

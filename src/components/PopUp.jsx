@@ -2,7 +2,10 @@ import AboutPopUp from "../utils/CondominiumsInformationPopup/AboutProperty";
 import ApplicationPopUp from "../utils/CondominiumsInformationPopup/ApplicationAgrement";
 import ChargesPopUp from "../utils/CondominiumsInformationPopup/ChargesPopUp";
 import CommunityPopUp from "../utils/CondominiumsInformationPopup/CommunityPopUp";
+import LandmarkPopUp from "../utils/CondominiumsInformationPopup/LandMarkPopUp";
 import LeasingInfoPopup from "../utils/CondominiumsInformationPopup/LeasingInfoPopup";
+import NearestEducationPopUp from "../utils/CondominiumsInformationPopup/NearestEducationa";
+import ParkingPopUp from "../utils/CondominiumsInformationPopup/ParkingPopUp";
 import PetFeesPopUp from "../utils/CondominiumsInformationPopup/petFeesPopUp";
 import PropertyAdress from "../utils/CondominiumsInformationPopup/PropertyAdress";
 import RentFrequencyPayment from "../utils/CondominiumsInformationPopup/RentFrequencyPayment";
@@ -79,7 +82,36 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, setIsModalOpen }) => {
             )}
           </>
         );
-
+      case "parking":
+        return(
+          <>
+           {isModalOpen && (
+              <ParkingPopUp onClose={() => setIsModalOpen(false)} />
+            )}
+          </>
+        )
+        case "nearestEducationalInstitution":
+          return(
+            <>
+            {isModalOpen && (
+              <NearestEducationPopUp text={"Add nearest educational institution"} a={"Educaional instution type "} b={"Educational institution name"}  onClose={() => setIsModalOpen(false)} />
+            )}
+            </>
+          )
+          case "nearestStations":
+            return(
+              <>
+               {isModalOpen && (
+              <NearestEducationPopUp text={"Add nearest station"} a={"Nearest station type"} b={"Nearest station name"} onClose={() => setIsModalOpen(false)} />
+            )}
+              </>
+            )
+            case "nearestLandmark":
+              return(
+                <>
+                 <LandmarkPopUp onClose={() => setIsModalOpen(false)} />
+                </>
+              )
       default:
         return (
           <>
