@@ -9,6 +9,7 @@ import ParkingPopUp from "../utils/CondominiumsInformationPopup/ParkingPopUp";
 import PetFeesPopUp from "../utils/CondominiumsInformationPopup/petFeesPopUp";
 import PropertyAdress from "../utils/CondominiumsInformationPopup/PropertyAdress";
 import RentFrequencyPayment from "../utils/CondominiumsInformationPopup/RentFrequencyPayment";
+import UtilityProviderPopUp from "../utils/CondominiumsInformationPopup/Utilities";
 
 const PopUp = ({ isModalOpen, handleClose, selectedKey, setIsModalOpen }) => {
   if (!isModalOpen || !selectedKey) return null;
@@ -112,6 +113,12 @@ const PopUp = ({ isModalOpen, handleClose, selectedKey, setIsModalOpen }) => {
                  <LandmarkPopUp onClose={() => setIsModalOpen(false)} />
                 </>
               )
+              case "utilitiesProvider":
+                return (
+                  <>
+                   <UtilityProviderPopUp onClose={() => setIsModalOpen(false)} />
+                  </>
+                )
       default:
         return (
           <>
