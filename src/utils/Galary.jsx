@@ -66,4 +66,4 @@ const PropertyGallery = () => {
 };
 
 export default PropertyGallery;
-// some code added 
+// some code added some code added 
